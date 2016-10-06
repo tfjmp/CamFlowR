@@ -2,7 +2,7 @@
 
 Provenance visualiser for R using [cytoscape.js-prov](https://github.com/CamFlow/cytoscape.js-prov).
 
-![RStudio Integration](https://raw.githubusercontent.com/CamFlow/CamFlowR/master/www/examples.png)
+![RStudio Integration](https://raw.githubusercontent.com/CamFlow/CamFlowR/master/www/example.png)
 
 ## Installation
 
