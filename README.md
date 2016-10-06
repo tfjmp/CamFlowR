@@ -1,6 +1,6 @@
 # CamFlowR
 
-Provenance visualiser for R using (cytoscape.js-prov)[https://github.com/CamFlow/cytoscape.js-prov].
+Provenance visualiser for R using [cytoscape.js-prov](https://github.com/CamFlow/cytoscape.js-prov).
 
 ## Installation
 
