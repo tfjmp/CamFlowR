@@ -13,12 +13,19 @@ HTMLWidgets.widget({
     return {
       renderValue: function(x) {
         var notSupported = function(){
-          var box = vex.dialog.alert({ unsafeMessage: 'Display in your browser to enjoy all features.<br/><img src="helper.jpg"/>'});
+          var box = vex.dialog.alert({ unsafeMessage: 'Display in your browser to enjoy all features.<br/><img src="https://raw.githubusercontent.com/CamFlow/CamFlowR/master/www/helper.jpg"/>'});
           setTimeout( function(){box.close();}, 2000 );
         };
 
-        var body = document.getElementsByTagName("BODY")[0]
-        //body.appendChild(vex);
+        var addButton = function(){
+          var body = document.getElementsByTagName("BODY")[0]
+          var para = document.createElement("div");
+          para.innerHTML='<input type="checkbox" id="ancestors" name="ancestors" value="ancestors" onclick="showAncestor();"checked>Show Ancestor<br>\
+      		  <input type="checkbox" id="successors" name="successors" value="successors" onclick="showSuccessor();" checked>Show Successor<br>\
+      		  <input type="checkbox" id="control" name="control" value="control" onclick="ignoreControl();">Ignore Control Flow';
+          body.appendChild(para);
+        }
+
         vex.defaultOptions.className = 'vex-theme-flat-attack';
         cy = cytoscape({
   				container: el,
@@ -151,7 +158,12 @@ HTMLWidgets.widget({
   			});
         var browser = navigator.userAgent;
         if($.isFunction(browser.includes)){
-          notSupported();
+          if(!browser.includes('RStudio')){
+            var cxtmenuApi = cy.cxtmenu( prov_menu );
+            addButton();
+          }else{
+            notSupported();
+          }
         }else{
           notSupported();
         }
@@ -167,3 +179,16 @@ HTMLWidgets.widget({
     };
   }
 });
+
+function showAncestor(){
+  var show = document.getElementById("ancestors").checked;
+  cy.prov_core().setShowAncestors(show);
+}
+function showSuccessor(){
+  var show = document.getElementById("successors").checked;
+  cy.prov_core().setShowSuccessors(show);
+}
+function ignoreControl(){
+  var ignore = document.getElementById("control").checked;
+  cy.prov_core().setIgnoreControlFlow(ignore);
+}
