@@ -11,4 +11,4 @@ Encoding: UTF-8
 LazyData: true
 URL: http://camflow.org
 BugReports: https://github.com/CamFlow/CamFlowR/issues
-Imports: shiny
+Imports: htmlwidgets,shiny
