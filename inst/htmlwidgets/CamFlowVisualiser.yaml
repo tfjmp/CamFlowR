@@ -45,3 +45,12 @@ dependencies:
   version: 1.0.0
   src: htmlwidgets
   script: ./lib/cytoscape-prov-menu.js
+- name: cytoscape-panzoom
+  version: 2.4.0
+  src: htmlwidgets
+  script: ./lib/cytoscape-panzoom.js
+  stylesheet: ./lib/cytoscape.js-panzoom.css
+- name: font-awesome
+  version: 4.0.3
+  src: htmlwidgets
+  stylesheet: ./lib/font-awesome.min.css

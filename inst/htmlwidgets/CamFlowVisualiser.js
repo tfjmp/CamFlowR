@@ -159,6 +159,7 @@ HTMLWidgets.widget({
         var browser = navigator.userAgent;
         if($.isFunction(browser.includes)){
           if(!browser.includes('RStudio')){
+            cy.panzoom({});
             var cxtmenuApi = cy.cxtmenu( prov_menu );
             addButton();
           }else{
