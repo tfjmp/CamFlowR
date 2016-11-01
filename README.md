@@ -16,7 +16,11 @@ Provenance visualiser for R using [cytoscape.js-prov](https://github.com/CamFlow
 ## Usage
 
 CamFlow only:
-
 ```
 > CamFlowVisualiser(myProvJSonString)
+```
+
+Executing a script with RDataTracker (more details [here](https://github.com/End-to-end-provenance/RDataTracker)):
+```
+> ddg.run('myScript.R', diplay=TRUE)
 ```

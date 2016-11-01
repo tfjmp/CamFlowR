@@ -1,9 +1,14 @@
 Package: CamFlow
-Title: What the Package Does (one line, title case)
+Title: W3C JSON PROV visualiser.
 Version: 0.0.0.9000
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
+Authors@R: person("Thomas", "Pasquier", email = "tfjmp@seas.harvard.edu", role = c("aut", "cre"))
+Author: Thomas Pasquier [aut, cre]
+Maintainer: Thomas Pasquier <tfjmp@seas.harvard.edu>
 Description: What the package does (one paragraph).
 Depends: R (>= 3.2.3)
-License: What license is it under?
+License: GPL-3 | file LICENSE
 Encoding: UTF-8
 LazyData: true
+URL: http://camflow.org
+BugReports: https://github.com/CamFlow/CamFlowR/issues
+Imports: htmlwidgets,shiny
