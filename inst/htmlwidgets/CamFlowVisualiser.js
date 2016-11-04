@@ -68,9 +68,14 @@ HTMLWidgets.widget({
   							'content': 'data(label)',
   							'text-opacity': 0.5,
   							'text-valign': 'center',
-  							'text-halign': 'right',
-  							'width': 'data(weight)',
-  							'height': 'data(weight)'
+  							'text-halign': 'center',
+                'width': 'label',
+                'border-color': '#000000',
+                'border-width': '1px',
+                'padding-left': '5px',
+                'padding-right': '5px',
+                'padding-top': '5px',
+                'padding-bottom': '5px'
   						}
   					},
 
