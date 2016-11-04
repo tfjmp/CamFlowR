@@ -1,10 +1,22 @@
+var search = function() {
+  cy.nodes().unselect();
+  var b = document.getElementById('search').value;
+  var eles = cy.nodes("[label*='"+b+"']");
+  if(eles.empty()){
+    vex.dialog.alert("Sorry, no node matching your query was found.");
+    return;
+  }
+  eles.each(function(i, node){
+    node.select();
+  });
+  cy.fit(eles, 10);
+};
+
 HTMLWidgets.widget({
 
   name: 'CamFlowVisualiser',
 
   type: 'output',
-
-
 
   factory: function(el, width, height) {
 
@@ -12,6 +24,8 @@ HTMLWidgets.widget({
 
     return {
       renderValue: function(x) {
+
+
         var notSupported = function(){
           var box = vex.dialog.alert({ unsafeMessage: 'Display in your browser to enjoy all features.<br/><img src="https://raw.githubusercontent.com/CamFlow/CamFlowR/master/www/helper.jpg"/>'});
           setTimeout( function(){box.close();}, 2000 );
@@ -24,7 +38,17 @@ HTMLWidgets.widget({
       		  <input type="checkbox" id="successors" name="successors" value="successors" onclick="showSuccessor();" checked>Show Successor<br>\
       		  <input type="checkbox" id="control" name="control" value="control" onclick="ignoreControl();">Ignore Control Flow';
           body.appendChild(para);
-        }
+        };
+
+        var addSearch = function(){
+          var body = document.getElementsByTagName("BODY")[0]
+          var para = document.createElement("div");
+          para.innerHTML = '<form id="tfnewsearch" action="javascript:search()">\
+					     <input type="text" id="search" size="21" maxlength="120" placeholder="Search..."></input>\
+               <input type="submit">\
+				      </form>';
+          body.appendChild(para);
+        };
 
         vex.defaultOptions.className = 'vex-theme-flat-attack';
         cy = cytoscape({
@@ -162,6 +186,7 @@ HTMLWidgets.widget({
           if(!browser.includes('RStudio')){
             var cxtmenuApi = cy.cxtmenu( prov_menu );
             addButton();
+            addSearch();
             cy.navigator({});
           }else{
             notSupported();
