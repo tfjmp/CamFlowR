@@ -54,3 +54,8 @@ dependencies:
   version: 4.0.3
   src: htmlwidgets
   stylesheet: ./lib/font-awesome.min.css
+- name: cytoscape-navigator
+  version: 1.0.1
+  src: htmlwidgets
+  script: ./lib/cytoscape-navigator.js
+  stylesheet: ./lib/cytoscape.js-navigator.css
