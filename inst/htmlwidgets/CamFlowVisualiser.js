@@ -1,7 +1,7 @@
 var search = function() {
   cy.nodes().unselect();
   var b = document.getElementById('search').value;
-  var eles = cy.nodes("[label*='"+b+"']");
+  var eles = cy.nodes("[label@*='"+b+"']");
   if(eles.empty()){
     vex.dialog.alert("Sorry, no node matching your query was found.");
     return;
