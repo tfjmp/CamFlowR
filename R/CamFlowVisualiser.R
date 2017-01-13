@@ -1,6 +1,6 @@
-#' <Add Title>
+#' CamFlow Visualiser
 #'
-#' <Add Description>
+#' CamFlow ProvJSON visualiser wrapper for R.
 #'
 #' @import htmlwidgets
 #'
