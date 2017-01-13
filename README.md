@@ -7,7 +7,7 @@ Provenance visualiser for R using [cytoscape.js-prov](https://github.com/CamFlow
 ## Installation
 
 ```
-> devtools::install_github('tfjmp/RDataTracker', ref='development')
+> devtools::install_github('End-to-end-provenance/RDataTracker', ref='development')
 > devtools::install_github('CamFlow/CamFlowR')  
 > library('CamFlow')  
 > library('RDataTracker')
